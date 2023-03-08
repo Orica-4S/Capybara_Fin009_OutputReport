@@ -3,6 +3,7 @@
   "description": "Downloading Output Reports For Fin009",
   "main": "Main.xaml",
   "dependencies": {
+    "Capybara_Fin009_UILibrary": "[1.0.1]",
     "KillApps": "[1.0.6]",
     "SAPFioriLogin": "[1.0.4]",
     "UiPath.Excel.Activities": "[2.16.1]",
