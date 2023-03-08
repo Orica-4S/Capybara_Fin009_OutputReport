@@ -1,0 +1,16 @@
+﻿{
+  "Id": "TJGtvEaab0y6qncH3ihpXA",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/TJGtvEaab0y6qncH3ihpXA",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/7F2KRvtRJU6p0iCly32R9A",
+  "Name": "Ledger Input box",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2023-03-02T06:13:36.1244814Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-02T06:17:01.1416033Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Id": "I2PXamUGfUuCEpzTjA4_YQ",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/I2PXamUGfUuCEpzTjA4_YQ",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/czy2eqkvgUS3ztHvOFxOzg",
+  "Name": "Filter Ok BTN",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2023-03-01T08:23:23.7228767Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-01T08:23:23.7228767Z"
+}

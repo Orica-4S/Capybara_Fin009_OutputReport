@@ -1,0 +1,14 @@
+﻿{
+  "Id": "b9uzRbisuEmun0270LbuuA",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/b9uzRbisuEmun0270LbuuA",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/czy2eqkvgUS3ztHvOFxOzg",
+  "Name": "Status Box",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Created": "2023-03-01T07:41:54.5212227Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-01T07:41:54.5212227Z"
+}

@@ -1,0 +1,16 @@
+﻿{
+  "Id": "6YUW4Osa9kew0vD4dULHZw",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/6YUW4Osa9kew0vD4dULHZw",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/7F2KRvtRJU6p0iCly32R9A",
+  "Name": "GL Account",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2023-03-01T09:45:26.0207784Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-01T09:46:00.0883666Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

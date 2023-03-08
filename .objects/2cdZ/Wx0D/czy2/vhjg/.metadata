@@ -1,0 +1,14 @@
+﻿{
+  "Id": "vhjgqGTkGkKG16pWCIZa2Q",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/vhjgqGTkGkKG16pWCIZa2Q",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/czy2eqkvgUS3ztHvOFxOzg",
+  "Name": "Extend BTN",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2023-03-01T08:27:36.6502466Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-01T08:27:36.6502466Z"
+}

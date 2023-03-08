@@ -1,0 +1,17 @@
+﻿{
+  "Id": "77AwuFOaBEajdG0oIIyxyA",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/77AwuFOaBEajdG0oIIyxyA",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/Wx0DRu0Fe02AhQ1om5rpuA",
+  "Name": "SAP Fiori  Home Screen",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2023-03-01T07:37:05.4396865Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-02T11:54:11.5314511Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

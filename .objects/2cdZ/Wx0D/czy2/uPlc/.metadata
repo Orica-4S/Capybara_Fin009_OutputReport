@@ -1,0 +1,14 @@
+﻿{
+  "Id": "uPlcKXKpjUe_T-t2_c6J6w",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/uPlcKXKpjUe_T-t2_c6J6w",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/czy2eqkvgUS3ztHvOFxOzg",
+  "Name": "Download Tab",
+  "Type": "Element",
+  "TaxonomyType": "Text",
+  "Created": "2023-03-02T06:58:16.9558497Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-02T06:58:16.9558497Z"
+}

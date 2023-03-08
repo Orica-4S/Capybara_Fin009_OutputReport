@@ -1,0 +1,14 @@
+﻿{
+  "Id": "noC040GtB0WhB_t5QtfQsw",
+  "Reference": "KWxMGTXoP0u7PO4xdaUHCQ/noC040GtB0WhB_t5QtfQsw",
+  "ParentRef": "KWxMGTXoP0u7PO4xdaUHCQ/czy2eqkvgUS3ztHvOFxOzg",
+  "Name": "Settings BTN",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2023-03-01T08:18:07.2556169Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-03-01T08:18:07.2556169Z"
+}

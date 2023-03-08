@@ -1,0 +1,427 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process_Flow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_ManageFilePath" Type="OutArgument(x:String)" />
+    <x:Property Name="out_LineItemsFilePath" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>844,1065.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Process_Flow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap2010:Annotation.AnnotationText="Workflow Name]:-&#xA;Process flow&#xA;&#xA;[Description]:- This workflow is the main Process Flow of the Process where bot would download &quot;Customer Line Items&quot; &amp; &quot;Line Items&quot; Files.&#xA;&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_Config - Dictionary &#xA;&#xA;[Output]:-&#xA;out_ManageFilePath- File Path for &quot;ManageCustomerItems&quot;&#xA;out_LineItemsFilePath - File Path for &quot;Line Items&quot;&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Process_Flow" sap:VirtualizedContainerService.HintSize="634,1000.6666666666665" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">280,2.6666666666666643</av:Point>
+        <av:Size x:Key="ShapeSize">60,74.66666666666667</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">310,77.33333333333334 310,123</av:PointCollection>
+        <x:Double x:Key="Height">601</x:Double>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID4</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">210,123</av:Point>
+          <av:Size x:Key="ShapeSize">200,54</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">310,177 310,233.00000000000003</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Open Manage Customer Line Items Tile" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Manage Customer Line Item Module" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OpenRequiredModule.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_MediumDelay">[TimeSpan.FromSeconds(CInt(In_Config("Delay_Small").ToString.Trim))]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">[In_Config("ManageCustomerModule").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_LargeDelay">[Double.Parse(In_Config("Delay_Large").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SystemException">[In_Config("SE_NavigateFailed").ToString]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence sap:VirtualizedContainerService.HintSize="400,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[exception.Message]" />
+                <Throw Exception="[exception]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">210,233.00000000000003</av:Point>
+              <av:Size x:Key="ShapeSize">200,54</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">310,287 310,333</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch DisplayName="Input Details for Manage Customer Line Items" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch.Try>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InputDetailsManageCustomerLineItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="360,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InputDetailsManageCustomerLineItems.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Status">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;ManageCustomerStatus&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;ManageCustomerModule&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Filtername1">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;FilterName1&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Filtername2">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;FilterName2&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FilterValue1">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;InputFilterValue1&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FilterValue2">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;InputFilterValue2&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_CompanyCodes">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;CompanyCodes&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_LargeDelay">
+                    <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;Delay_Large&quot;).ToString.Trim))" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_smallDelay">
+                    <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;Delay_Small&quot;).ToString.Trim))" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_systemexception">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;SE_DownloadFail&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolderPath">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;OrchestratorFolderPath&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_UserNameAsset">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;BotEmailId&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_CheckAppDelay">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;Delay_Large&quot;).ToString" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[exception.Message]" />
+                    <Throw Exception="[exception]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">210,333</av:Point>
+                  <av:Size x:Key="ShapeSize">200,54</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">310,387 310,433</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch DisplayName="Open Display Line Items in General Ledger" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                <TryCatch.Try>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Display Line Items In General Ledger.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="342,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Display Line Items In General Ledger.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_MediumDelay">[TimeSpan.FromSeconds(CInt(In_Config("Delay_Medium").ToString.Trim))]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">[In_Config("DisplayLineModuleName").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Double" x:Key="in_LargeDelay">[Double.Parse(In_Config("Delay_Large").ToString)]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SystemException">[In_Config("SE_NavigateFailed").ToString]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[exception.Message]" />
+                        <Throw Exception="[exception]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">210,433</av:Point>
+                      <av:Size x:Key="ShapeSize">200,54</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">310,487 310,547</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Input Details For Line Items" sap:VirtualizedContainerService.HintSize="438.6666666666667,354.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                    <TryCatch.Try>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Input Display Line Items.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Input Display Line Items.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtername1">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;FilterName1&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtername2">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;FilterName2&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_FilterValue1">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;InputFilterValue1&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_FilterValue2">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;InputFilterValue2&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_GLAccounts">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;GLAccounts&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_CompanyCodes">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;CompanyCodes&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_SmallDelay">
+                            <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;Delay_Small&quot;).ToString.Trim))" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_LargeDelay">
+                            <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;Delay_Large&quot;).ToString.Trim))" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_systemException">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;SE_DownloadFail&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;DisplayLineModuleName&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolderPath">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;OrchestratorFolderPath&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_UserNameAsset">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;BotEmailId&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_CheckAppDelay">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;Delay_Large&quot;).ToString" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[exception.Message]" />
+                            <Throw Exception="[exception]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">210,547</av:Point>
+                          <av:Size x:Key="ShapeSize">200,54</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch DisplayName="Move Downloaded File" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                        <TryCatch.Try>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Move Downloaded Files.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Move Downloaded Files.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_DownloadfilePath">[In_Config("DownloadFilePath").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLineItemsName">[In_Config("ManageCustomerFileName").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_OpenLineItemsName">[In_Config("LineItemsFileName").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_OutputFilePath">[In_Config("DataOutputFilePath").ToString]</InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_ManageCustomerFilePath">[out_ManageFilePath]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_OpenlineItemsFilePath">[out_LineItemsFilePath]</OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="406,409.3333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="400,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[exception.Message]" />
+                                <Throw Exception="[exception]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                              </Sequence>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+  </Flowchart>
+</Activity>
