@@ -22,7 +22,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1722.6666666666667,8004</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1722.6666666666667,8138.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InputDetailsManageCustomerLineItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -113,14 +113,14 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input Details For manager Customer Line Items&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input Details For manager Customer Line Items" sap:VirtualizedContainerService.HintSize="1732.6666666666667,7939.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input Details For manager Customer Line Items&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input Details For manager Customer Line Items" sap:VirtualizedContainerService.HintSize="1732.6666666666667,8074" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7300" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7434.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Name="strTodaysDate" />
         <Variable x:TypeArguments="x:String" Name="strDaterange" />
@@ -133,7 +133,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1632,7060.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="1632,7195.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strUserName" />
           </Sequence.Variables>
@@ -173,22 +173,22 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1570,6310.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
+          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1570,6445.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
-                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1528,6060.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1528,6195.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Manage customer Line Items Screen" sap:VirtualizedContainerService.HintSize="1466,5950" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Manage customer Line Items Screen" sap:VirtualizedContainerService.HintSize="1466,6084.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,5730.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,5865.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strLayoutName" />
                           </Sequence.Variables>
@@ -219,7 +219,7 @@
                               <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems" ContentHash="D65Nt68SCketPT2icoy0kQ" DesignTimeRectangle="511, 571, 56, 53" DesignTimeScaleFactor="1.649999976158142" ElementType="Button" FriendlyName="'Select View Dropdown'" FullSelectorArgument="&lt;webctrl idx='2' ui5-tooltip='Select View' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' ui5-tooltip='Select View' type='' class='sapMBtnBase sapMBtn sapUICompVarMngmtTriggerBtn sapMTitleStyleH4' aaname='Select View' check:text='Select View' /&gt;" Guid="fd984f62-62d0-4fbf-aaf6-1bbbc47fb477" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAA5CAYAAABqMUjBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAF7SURBVGhD7dg9SwNBEMbx+VAqiL3fw6BiJ2IngoVgfGnUxviChWITRGNAG4MQEcSXSiEEtBAUbCKJCYnkrhh5DgQJG7iY3Q2MU/yrWRZ+HFfMUhAE/J9SsPQULD0FS0/B0lOw9BQsPQVLT8HSU7D0FCw9BUuPwjA0DqRGtXrDOOi0rcwlD42vcDp3x82m+Uw31RtfPLed5eHJNX54ejWeiRMVX97Zxlee3z3lvpEkD44tW0cDO7t5Et3fn0hy7rZgPBcnurgvWgF/VKo8urBvHd2KTR3lu7qXdrJXVsAI6ImlA2to21hEqeO8NTCyhXaBRdbBqFu0KyxyAkZ/RbvEImdg1CnaNRY5BaO4aB9YROc3BadgBPTUarot2hcW0ePzm3Mwaof2iUVUqtSMAxe1ovfOrnlmI+MNi7wvD7/RP/nCop5sS0BPrx9G0IHEYrR4+MCinu7DpXKVy5/+fimkLx7SU7D0FCw9BUtPwdJTsPQULD0FS0/Bsgv4Gz2e2ZDAyyTzAAAAAElFTkSuQmCC" InformativeScreenshot="08599346e051a580a5a628038512c920.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/8WLEIC-V8EqWDkCGE71G1g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <Assign DisplayName="Assign LayoutName" sap:VirtualizedContainerService.HintSize="854,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign DisplayName="Assign LayoutName" sap:VirtualizedContainerService.HintSize="1370,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_4">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[strLayoutName]</OutArgument>
                             </Assign.To>
@@ -312,7 +312,7 @@
                             </uix:NClick.Target>
                           </uix:NClick>
                           <Delay Duration="[in_LargeDelay]" sap:VirtualizedContainerService.HintSize="1370,92" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                          <uix:NCheckState DisplayName="Check App State 'No Data Found'" sap:VirtualizedContainerService.HintSize="1370,1162.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'No Data Found'" sap:VirtualizedContainerService.HintSize="1370,1297.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
                             <uix:NCheckState.IfExists>
                               <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -324,15 +324,15 @@
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="916,941.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="916,1076" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NCheckState DisplayName="Check App State 'Export BTN'" sap:VirtualizedContainerService.HintSize="854,693.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
+                                <uix:NCheckState DisplayName="Check App State 'Export BTN'" sap:VirtualizedContainerService.HintSize="854,696" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
                                   <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,272.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,275.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,7 +346,7 @@
                                     </Sequence>
                                   </uix:NCheckState.IfExists>
                                   <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,472" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,474.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -374,6 +374,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uix:NCheckState>
+                                <Delay Duration="[in_smallDelay]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="Delay_4" />
                                 <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[(in_DownloadfilePath+in_CustomerLineItemsName+&quot;.xlsx&quot;).ToString.Replace(&quot;*&quot;,System.Environment.UserName)]" PathType="File" />
                               </Sequence>
                             </uix:NCheckState.IfNotExists>
