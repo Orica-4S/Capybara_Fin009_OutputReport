@@ -102,24 +102,12 @@
         <TryCatch.Try>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Manage Customer Line Item Module" sap:VirtualizedContainerService.HintSize="363.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP\Open Manage Customer Line Item Tile.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_MediumDelay">
-                <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;Delay_Small&quot;).ToString.Trim))" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;ManageCustomerModule&quot;).ToString" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:Double" x:Key="in_LargeDelay">
-                <VisualBasicValue x:TypeArguments="x:Double" ExpressionText="Double.Parse(In_Config(&quot;Delay_Large&quot;).ToString)" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_SystemException">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;SE_NavigateFailed&quot;).ToString" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount">
-                <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(In_Config(&quot;MaxRetryNumber&quot;).ToString.Trim)" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">
-                <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;RetryInterval&quot;).ToString.Trim))" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_MediumDelay">[TimeSpan.FromSeconds(CInt(In_Config("Delay_Small").ToString.Trim))]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">[In_Config("ManageCustomerModule").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_LargeDelay">[Double.Parse(In_Config("Delay_Large").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SystemException">[In_Config("SE_NavigateFailed").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount">[Convert.ToInt32(In_Config("MaxRetryNumber").ToString.Trim)]</InArgument>
+              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">[TimeSpan.FromSeconds(CInt(In_Config("RetryInterval").ToString.Trim))]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -214,6 +202,12 @@
                   <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">
                     <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;RetryInterval&quot;).ToString.Trim))" />
                   </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_DownloadfilePath">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;DownloadFilePath&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_CustomerLineItemsName">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;ManageCustomerFileName&quot;).ToString" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -260,24 +254,12 @@
                 <TryCatch.Try>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Display Line Items In General Ledger.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAP\Open Display Line Items In General Ledger Tile.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_MediumDelay">
-                        <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;Delay_Medium&quot;).ToString.Trim))" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;DisplayLineModuleName&quot;).ToString" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Double" x:Key="in_LargeDelay">
-                        <VisualBasicValue x:TypeArguments="x:Double" ExpressionText="Double.Parse(In_Config(&quot;Delay_Large&quot;).ToString)" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_SystemException">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;SE_NavigateFailed&quot;).ToString" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount">
-                        <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(In_Config(&quot;MaxRetryNumber&quot;).ToString.Trim)" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">
-                        <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.FromSeconds(CInt(In_Config(&quot;RetryInterval&quot;).ToString.Trim))" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_MediumDelay">[TimeSpan.FromSeconds(CInt(In_Config("Delay_Medium").ToString.Trim))]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ModuleName">[In_Config("DisplayLineModuleName").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Double" x:Key="in_LargeDelay">[Double.Parse(In_Config("Delay_Large").ToString)]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SystemException">[In_Config("SE_NavigateFailed").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount">[Convert.ToInt32(In_Config("MaxRetryNumber").ToString.Trim)]</InArgument>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">[TimeSpan.FromSeconds(CInt(In_Config("RetryInterval").ToString.Trim))]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -371,6 +353,12 @@
                           </InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount">
                             <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(In_Config(&quot;MaxRetryNumber&quot;).ToString.Trim)" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_DownloadfilePath">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;DownloadFilePath&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_OpenLineItemsName">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Config(&quot;LineItemsFileName&quot;).ToString" />
                           </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>

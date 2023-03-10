@@ -16,14 +16,16 @@
     <x:Property Name="in_LayoutName" Type="InArgument(x:String)" />
     <x:Property Name="in_RetryInterval" Type="InArgument(x:TimeSpan)" />
     <x:Property Name="in_RetryCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_DownloadfilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_OpenLineItemsName" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1722.6666666666667,8367.333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1722.6666666666667,8693.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Apply_Filters_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="34">
+    <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -58,6 +60,7 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -110,7 +113,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input for Line Items File&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input for Line Items File" sap:VirtualizedContainerService.HintSize="1732.6666666666667,8302.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input for Line Items File&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input for Line Items File" sap:VirtualizedContainerService.HintSize="1732.6666666666667,8628.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strUserName" />
     </Sequence.Variables>
@@ -134,31 +137,34 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_InputString">[in_CompanyCodes]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7268.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7594.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
+      </TryCatch.Variables>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7029.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7355.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,6436.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7105.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,6326" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,6994.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,6106.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,6775.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,5990.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,6659.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strLayoutName" />
                           </Sequence.Variables>
@@ -228,6 +234,34 @@
                             </uix:NClick.Target>
                           </uix:NClick>
                           <Delay Duration="[in_LargeDelay]" sap:VirtualizedContainerService.HintSize="1370,92" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                          <uix:NCheckState DisplayName="Check App State 'Settings BTN'" sap:VirtualizedContainerService.HintSize="1370,496.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,275.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Extend BTN'" sap:VirtualizedContainerService.HintSize="338,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASH5HSEV0APU69AKM4JR0WAE27MA0J1NH24G2H7T" ContentHash="LGU7Uf5uW0SfoLhz7eSGsQ" DesignTimeRectangle="1806, 356, 26, 40" DesignTimeScaleFactor="1.649999976158142" FriendlyName="'Extend BTN'" FullSelectorArgument="&lt;webctrl ui5-class='sap.ui.core.Icon' ui5p-src='sap-icon://overflow' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-class='sap.ui.core.Icon' ui5p-src='sap-icon://overflow' tag='SPAN' type='' class='sapUiIcon sapUiIconMirrorInRTL sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft' aaname='' /&gt;" Guid="cb921da0-99e0-4717-84d2-43b6963b3884" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAsCAYAAABygggEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGGSURBVFhH7ZLLSwJBHMf7o3oQBB66RB2Cgm4dshdFFyt6CdHB2IqyrETzIkVQUdjSIYiQNCghIukFiiYVVlqZZj5yL9+cgV1avXUYD83hw+zMfH/zmZmdMkmSUAq4mBlczAwuZgYXM4OLmcHFzFDE6UwWNvEYmp45VHfOYNy2h1giWVTw9PoBnWkbldopmiU1pLYw57t/RuuEHRVaAY1DFhyd+1TzVJzLSTBuHKK8TVBBBL8XjX9+oUtYV2XIwkQuZwiBxwjqdEuqXE33LE6vgkqGiu/CUdT3L6N9cg0vb3HEkymMWUQaPrsNKWH3hR9VHdPQW0UkU2mE8nUtehuaR1cQeU8ouYVNJ721XZcX2ew3PNdB1PbNY3BxB5l8n2So2Ot/gKbXCIvDpRQfeG7oTkkrj4lub9FmTFtOejqyCXls2OxAw4AZ4WiM9slNaQ2rFPJNxkp74pL9Y0LhqzbY9+nJ5XmZv7zqphErTi4DqnlFzBouZgYXM4OLmcHFzOBiZvw3sYQfyxansREvqFUAAAAASUVORK5CYII=" InformativeScreenshot="c20277db08fe7bbef22351f25cfcf3b5.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/vhjgqGTkGkKG16pWCIZa2Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASLPLKDZYR5DGAURSNF4Z6YOLKXZJUDKQPAUBV6S" ContentHash="A-xjH1WiWkCZZnVygZVxGg" DesignTimeRectangle="1742, 514, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings BTN'" FullSelectorArgument="&lt;webctrl ui5-tooltip='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-tooltip='Settings' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBarChild' aaname='Settings' check:text='Settings' /&gt;" Guid="88be3346-6760-491c-8654-13a469eaf557" InformativeScreenshot="67f9735a0e052d9ff733e4883aacf86f.png" Reference="tnutLbMXZk6h2u2iXlkr1A/noC040GtB0WhB_t5QtfQsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
                           <uix:NClick ClickType="Single" DisplayName="Click 'Settings BTN'" sap:VirtualizedContainerService.HintSize="1370,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASLPLKDZYR5DGAURSNF4Z6YOLKXZJUDKQPAUBV6S" ContentHash="A-xjH1WiWkCZZnVygZVxGg" DesignTimeRectangle="1742, 514, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings BTN'" FullSelectorArgument="&lt;webctrl ui5-tooltip='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-tooltip='Settings' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBarChild' aaname='Settings' check:text='Settings' /&gt;" Guid="88be3346-6760-491c-8654-13a469eaf557" InformativeScreenshot="67f9735a0e052d9ff733e4883aacf86f.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/noC040GtB0WhB_t5QtfQsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
@@ -274,7 +308,7 @@
                             </uix:NClick.Target>
                           </uix:NClick>
                           <Delay Duration="[in_LargeDelay]" sap:VirtualizedContainerService.HintSize="1370,92" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                          <uix:NCheckState DisplayName="Check App State 'No Data Found'" sap:VirtualizedContainerService.HintSize="1370,1033.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'No Data Found'" sap:VirtualizedContainerService.HintSize="1370,1165.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
                             <uix:NCheckState.IfExists>
                               <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -286,7 +320,7 @@
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="916,812" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="916,944" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -336,6 +370,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uix:NCheckState>
+                                <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[(in_DownloadfilePath+in_OpenLineItemsName+&quot;.xlsx&quot;).ToString.Replace(&quot;*&quot;,System.Environment.UserName)]" PathType="File" />
                               </Sequence>
                             </uix:NCheckState.IfNotExists>
                             <uix:NCheckState.Target>
@@ -361,31 +396,7 @@
           </ui:RetryScope.ActivityBody>
           <ui:RetryScope.Condition>
             <ActivityFunc x:TypeArguments="x:Boolean">
-              <uix:NCheckState DisplayName="Check App State 'Download Tab'" sap:VirtualizedContainerService.HintSize="854,430.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
-                <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,209.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Line Items File was Successfully Downloaded&quot;]" />
-                  </Sequence>
-                </uix:NCheckState.IfExists>
-                <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Throw Exception="[New SystemException(in_systemException+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                  </Sequence>
-                </uix:NCheckState.IfNotExists>
-                <uix:NCheckState.Target>
-                  <uix:TargetAnchorable ContentHash="noZZtJzTv0GAMWuEqmLYkg" DesignTimeRectangle="24, 10, 306, 42" DesignTimeScaleFactor="1.5" FriendlyName="'Download Tab'" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads' role='grouping' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads' role='grouping' automationid='' check:fulltext='Downloads' /&gt;" Guid="4a17007f-f1d6-47dc-8c12-37b273f1f473" ImageBase64="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" InformativeScreenshot="94d21e3694e67dc17dc6eead9e9e1003.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/uPlcKXKpjUe_T-t2_c6J6w" ScopeSelectorArgument="&lt;wnd aaname='Downloads' app='msedge.exe' cls='Chrome_WidgetWin_2' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
-                </uix:NCheckState.Target>
-              </uix:NCheckState>
+              <ui:CheckTrue DisplayName="Check True" ErrorMessage="[in_systemexception+&quot; &quot;+in_OpenLineItemsName]" Expression="[FileExists]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
             </ActivityFunc>
           </ui:RetryScope.Condition>
           <sap:WorkflowViewStateService.ViewState>
