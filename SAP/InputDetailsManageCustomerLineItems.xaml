@@ -14,11 +14,13 @@
     <x:Property Name="in_UserNameAsset" Type="InArgument(x:String)" />
     <x:Property Name="in_CheckAppDelay" Type="InArgument(x:String)" />
     <x:Property Name="in_LayoutName" Type="InArgument(x:String)" />
+    <x:Property Name="in_RetryCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_RetryInterval" Type="InArgument(x:TimeSpan)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1722.6666666666667,7966</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1722.6666666666667,8102</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InputDetailsManageCustomerLineItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -108,14 +110,14 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input Details For manager Customer Line Items&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input Details For manager Customer Line Items" sap:VirtualizedContainerService.HintSize="1732.6666666666667,7901.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input Details For manager Customer Line Items&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input Details For manager Customer Line Items" sap:VirtualizedContainerService.HintSize="1732.6666666666667,8037.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7262" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7398" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Name="strTodaysDate" />
         <Variable x:TypeArguments="x:String" Name="strDaterange" />
@@ -127,7 +129,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1632,7022.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="1632,7158.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strUserName" />
           </Sequence.Variables>
@@ -136,8 +138,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1054,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Downloading Manage Customer Line Item report&quot;]" />
-          <Assign sap:VirtualizedContainerService.HintSize="1054,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1570,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Downloading Manage Customer Line Item report&quot;]" />
+          <Assign sap:VirtualizedContainerService.HintSize="1570,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strUserName]</OutArgument>
             </Assign.To>
@@ -153,12 +155,12 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open_ExcelFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Copy Column From Data Table.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open_ExcelFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="358,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Copy Column From Data Table.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_InputString">[in_CompanyCodes]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="358,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strDaterange]</OutArgument>
               </Assign.To>
@@ -167,7 +169,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1570,6272.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1570,6408.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
                 <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1528,5394.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -192,17 +194,17 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Company Code Box'" sap:VirtualizedContainerService.HintSize="854,205.33333333333334" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3">
+                          <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Company Code Box'" sap:VirtualizedContainerService.HintSize="1370,205.33333333333334" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3">
                             <uix:NKeyboardShortcuts.Target>
                               <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Customer-manageLineItems" ContentHash="-GaSLa8Hak2DTnnMxakxlA" DesignTimeRectangle="424, 333, 317, 39" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Company Code Box'" FullSelectorArgument="&lt;webctrl ui5-label='Company Code' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-label='Company Code' tag='DIV' type='' class='sapMInput sapMInputBase sapMInputBaseHasEndIcons sapMInputBaseHeightMargin sapMMultiInput' aaname='' /&gt;" Guid="c8fe9c3e-7521-4669-b293-84ffc0c60322" InformativeScreenshot="ae4997d722b848ee9882f44bf60b9316.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/f-wKTWQ_YkuZsh_KSlfETw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                             </uix:NKeyboardShortcuts.Target>
                           </uix:NKeyboardShortcuts>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Status Box'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="854,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[in_Status]" Version="V3">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Status Box'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1370,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[in_Status]" Version="V3">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Customer-manageLineItems" ContentHash="-VYhUvITmU6xU4Eke2Q-Qg" DesignTimeRectangle="786, 336, 328, 39" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'Status Box'" FullSelectorArgument="&lt;webctrl ui5-label='Status' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-label='Status' tag='DIV' type='' class='sapMSlt sapMSltDefault sapMSltHoverable sapMSltMinWidth sapMSltWithArrow' aaname='' /&gt;" Guid="3fdfbf6f-f2c4-42ed-b14f-15df578606ff" InformativeScreenshot="0bb00a38d28bc007041d7acd2d83a64f.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/b9uzRbisuEmun0270LbuuA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                             </uix:NTypeInto.Target>
                           </uix:NTypeInto>
-                          <Delay Duration="[in_smallDelay]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                          <Delay Duration="[in_smallDelay]" sap:VirtualizedContainerService.HintSize="1370,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
                           <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Date Range Box'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1370,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[&quot;[k(del)]&quot;+strDaterange]" Version="V3">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASMH0OER5LPOULQK55UGDAJ8JV2RF9LVB1PFJFJI" ContentHash="KBsO1dNhx0OpC9ZA39JtRQ" DesignTimeRectangle="1149, 336, 331, 39" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Date Range Box'" FullSelectorArgument="&lt;webctrl ui5-label='Posting Date' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-label='Posting Date' tag='DIV' type='' class='sapMInput sapMInputBase sapMInputBaseHasEndIcons sapMInputBaseHeightMargin' aaname='' /&gt;" Guid="80c736d6-7d6b-442c-a42f-4667b34d2417" InformativeScreenshot="60f98ae03703b0e1f0bc30b5f8987c5e.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/9ak3TmB4O0iirZUEvCxaOA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
@@ -364,9 +366,9 @@
             </ui:RetryScope.ActivityBody>
             <ui:RetryScope.Condition>
               <ActivityFunc x:TypeArguments="x:Boolean">
-                <uix:NCheckState DisplayName="Check App State 'Download Tab'" sap:VirtualizedContainerService.HintSize="950,716" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
+                <uix:NCheckState DisplayName="Check App State 'Download Tab'" sap:VirtualizedContainerService.HintSize="950,852" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
                   <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,494.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,630.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -395,6 +397,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NApplicationCard>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Manage Line Item File Was Downloaded&quot;]" />
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.IfNotExists>
@@ -429,7 +432,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1120.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1636.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

@@ -4,11 +4,13 @@
     <x:Property Name="in_ModuleName" Type="InArgument(x:String)" />
     <x:Property Name="in_LargeDelay" Type="InArgument(x:Double)" />
     <x:Property Name="in_SystemException" Type="InArgument(x:String)" />
+    <x:Property Name="in_RetryCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_RetryInterval" Type="InArgument(x:TimeSpan)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1144.6666666666667,4478.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1144.6666666666667,4445.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Open_Required_Module_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -106,7 +108,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Open Manage Customer Line Item Tile&#xA;&#xA;[Description]:-&#xA;TThis workflow would navigate to Manage Customer Line Items Tile and would Open it in SAP.&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_MediumDelay - Medium Delay&#xA;in_LargeDelay- Large Delay&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Open Manage Customer Line Item Tile" sap:VirtualizedContainerService.HintSize="1154.6666666666667,4414" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Open Manage Customer Line Item Tile&#xA;&#xA;[Description]:-&#xA;TThis workflow would navigate to Manage Customer Line Items Tile and would Open it in SAP.&#xA;&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_MediumDelay - Medium Delay&#xA;in_LargeDelay- Large Delay&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Open Manage Customer Line Item Tile" sap:VirtualizedContainerService.HintSize="1154.6666666666667,4380.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="RetryCount" />
     </Sequence.Variables>
@@ -125,7 +127,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope for Opening Required Module" sap:VirtualizedContainerService.HintSize="1054,3024.6666666666665" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="1">
+        <ui:RetryScope DisplayName="Retry Scope for Opening Required Module" sap:VirtualizedContainerService.HintSize="1054,3024.6666666666665" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
               <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1012,2608" sap2010:WorkflowViewState.IdRef="Sequence_27">
@@ -201,13 +203,14 @@
                             </Sequence>
                           </uix:NCheckState.IfExists>
                           <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,198" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,344" sap2010:WorkflowViewState.IdRef="Sequence_24">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="338,84.66666666666667" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Search Button Not Visible&quot;]" />
+                              <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
                             </Sequence>
                           </uix:NCheckState.IfNotExists>
                           <uix:NCheckState.Target>
