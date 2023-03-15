@@ -119,7 +119,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Process title- Capybara_CapyFin009_OutputReport&#xA;Process description - This Process would go to Manage Customer Line Items &amp; Display Line items in General Ledger Tile &#xA;then it would Input the details required and it would then select the Layout of the Columns and also would apply the manual filters and would download the reports and send Mail.&#xA;Author- sahil.baid@orica.com" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687.3333333333334,838" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Process title- Capybara_CapyFin009_OutputReport [Version 1.0.7]&#xA;Process description - This Process would go to Manage Customer Line Items &amp; Display Line items in General Ledger Tile &#xA;then it would Input the details required and it would then select the Layout of the Columns and also would apply the manual filters and would download the reports and send Mail.&#xA;Author- sahil.baid@orica.com" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687.3333333333334,838" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -319,7 +319,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <Transition.Condition>[SystemException is Nothing]</Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used and send the Mail." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="626,1400" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used and send the Mail." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,142" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
               <State.Entry>
                 <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="579.3333333333334,1252.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -349,7 +349,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="338,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="SendMail_Files.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail_Files.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Workflows\SendMail_Files.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_ManageFilePath">[strManageFilePath]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_LineItemFilePath">[strLineItemFilePath]</InArgument>
