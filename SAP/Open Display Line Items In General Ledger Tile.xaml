@@ -122,27 +122,27 @@
         <ui:RetryScope DisplayName="Retry Scope for Opening Required Module" sap:VirtualizedContainerService.HintSize="1054,1930" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1012,1337.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1012,1334.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="SAP Fiori  Home Screen" sap:VirtualizedContainerService.HintSize="950,1226.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="SAP Fiori  Home Screen" sap:VirtualizedContainerService.HintSize="950,1224" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,1007.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,1004.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check App State 'Search Box'" sap:VirtualizedContainerService.HintSize="854,891.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Timeout="[in_LargeDelay]" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Search Box'" sap:VirtualizedContainerService.HintSize="854,888.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Timeout="[in_LargeDelay]" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,670" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,667.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,13 +162,14 @@
                             </Sequence>
                           </uix:NCheckState.IfExists>
                           <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,468.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Search Button Not Visible&quot;]" />
+                              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="338,84.66666666666667" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
                               <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_4" />
                             </Sequence>
                           </uix:NCheckState.IfNotExists>
@@ -194,9 +195,9 @@
           </ui:RetryScope.ActivityBody>
           <ui:RetryScope.Condition>
             <ActivityFunc x:TypeArguments="x:Boolean">
-              <uix:NCheckState DisplayName="Check App State 'Display Line Items in General Ledger Tile'" sap:VirtualizedContainerService.HintSize="854,430.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" Version="V3">
+              <uix:NCheckState DisplayName="Check App State 'Display Line Items in General Ledger Tile'" sap:VirtualizedContainerService.HintSize="854,433.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="[in_LargeDelay]" Version="V3">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,209.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

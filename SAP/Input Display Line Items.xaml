@@ -132,39 +132,35 @@
         <InArgument x:TypeArguments="x:String">[in_UserNameAsset]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Copy All Company Codes" sap:VirtualizedContainerService.HintSize="1670.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Copy Column From Data Table.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_InputString">[in_CompanyCodes]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7726.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670.6666666666667,7882" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
+        <Variable x:TypeArguments="x:Boolean" Name="booNoDataFound" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7487.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7642.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7237.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7392.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,7126.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,7282" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,6907.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,7062.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,6791.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,6946.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strLayoutName" />
                           </Sequence.Variables>
@@ -174,6 +170,11 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Copy All Company Codes" sap:VirtualizedContainerService.HintSize="1370,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\Copy Column From Data Table.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_InputString">[in_CompanyCodes]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
                           <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Company Code Box'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="1370,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#GLAccount-displayGLLineItemReportingView" ContentHash="PpRepLCGGk6Jtxxe3fwF6w" DesignTimeRectangle="443, 356, 326, 43" DesignTimeScaleFactor="1.649999976158142" ElementType="InputBox" FriendlyName="'Company Code Box'" FullSelectorArgument="&lt;webctrl ui5-label='Company Code' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-label='Company Code' tag='DIV' type='' class='sapMInputBase sapMInputBaseHeightMargin sapMInput sapMMultiInput sapMInputBaseHasEndIcons' aaname='' /&gt;" Guid="45e473a8-0729-44fd-ba97-3236ae91dfe3" InformativeScreenshot="d120747b5c0eff5cd6c640dc9593cea5.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/ds8HltGlWUG9EuN4nmKucw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Display Line Items in General Ledger*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
@@ -310,13 +311,20 @@
                           <Delay Duration="[in_LargeDelay]" sap:VirtualizedContainerService.HintSize="1370,92" sap2010:WorkflowViewState.IdRef="Delay_3" />
                           <uix:NCheckState DisplayName="Check App State 'No Data Found'" sap:VirtualizedContainerService.HintSize="1370,1297.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="[Double.Parse(in_CheckAppDelay.ToString)]" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,179.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Throw Exception="[New SystemException(in_systemexception+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                <Assign sap:VirtualizedContainerService.HintSize="338,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[booNoDataFound]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </Assign.Value>
+                                </Assign>
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
@@ -370,7 +378,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uix:NCheckState>
-                                <Delay Duration="[in_SmallDelay]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                <Delay Duration="[in_LargeDelay]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="Delay_5" />
                                 <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[(in_DownloadfilePath+in_OpenLineItemsName+&quot;.xlsx&quot;).ToString.Replace(&quot;*&quot;,System.Environment.UserName)]" PathType="File" />
                               </Sequence>
                             </uix:NCheckState.IfNotExists>
@@ -397,7 +405,7 @@
           </ui:RetryScope.ActivityBody>
           <ui:RetryScope.Condition>
             <ActivityFunc x:TypeArguments="x:Boolean">
-              <ui:CheckTrue DisplayName="Check True" ErrorMessage="[in_systemexception+&quot; &quot;+in_OpenLineItemsName]" Expression="[FileExists]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+              <ui:CheckTrue DisplayName="Check True" ErrorMessage="[in_systemexception+&quot; &quot;+in_OpenLineItemsName]" Expression="[FileExists Or booNoDataFound]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
             </ActivityFunc>
           </ui:RetryScope.Condition>
           <sap:WorkflowViewStateService.ViewState>

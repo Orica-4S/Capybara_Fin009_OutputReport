@@ -100,9 +100,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID5" Condition="[in_bln_SuccessEmail]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID8" Condition="[in_bln_SuccessEmail]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,7 +134,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">1000,374</av:Point>
                   <av:Size x:Key="ShapeSize">200,54</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">1100,428 1100,518.6666666666666</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">1100,428 1100,458 1240,458 1240,486.66666666666663</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
@@ -157,31 +157,85 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID0">
+                <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID0" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                  <FlowSwitch.Default>
+                    <FlowStep x:Name="__ReferenceID6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">1140,673</av:Point>
+                          <av:Size x:Key="ShapeSize">200,54</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="SendMail_No Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
+                        <ui:SendOutlookMail.Files>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                        </ui:SendOutlookMail.Files>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:SendOutlookMail>
+                    </FlowStep>
+                  </FlowSwitch.Default>
+                  <FlowSwitch.Expression>
+                    <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_int_NoOfAttachments" />
+                  </FlowSwitch.Expression>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">1000,518.6666666666666</av:Point>
-                      <av:Size x:Key="ShapeSize">200,54</av:Size>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">1205,486.66666666666663</av:Point>
+                      <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                      <av:PointCollection x:Key="Default">1240,573.3333333333333 1240,673</av:PointCollection>
+                      <av:PointCollection x:Key="2Connector">1275,530 1420,530 1420,593</av:PointCollection>
+                      <x:String x:Key="DefaultCaseDisplayName">0</x:String>
+                      <av:PointCollection x:Key="1Connector">1205,530 1040,530 1040,593</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
-                    <ui:SendOutlookMail.Files>
-                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AttachmentPath(0)" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AttachmentPath(1)" />
-                        </InArgument>
-                      </scg:List>
-                    </ui:SendOutlookMail.Files>
+                  <FlowStep x:Key="2" x:Name="__ReferenceID5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">1320,593</av:Point>
+                        <av:Size x:Key="ShapeSize">200,54</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:SendOutlookMail>
-                </FlowStep>
+                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="SendMail_2 Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
+                      <ui:SendOutlookMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                          <InArgument x:TypeArguments="x:String">[in_AttachmentPath(0)]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[in_AttachmentPath(1)]</InArgument>
+                        </scg:List>
+                      </ui:SendOutlookMail.Files>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:SendOutlookMail>
+                  </FlowStep>
+                  <FlowStep x:Key="1" x:Name="__ReferenceID7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">939.9999999999999,593</av:Point>
+                        <av:Size x:Key="ShapeSize">200,54</av:Size>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="SendMail_1 Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
+                      <ui:SendOutlookMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                          <InArgument x:TypeArguments="x:String">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AttachmentPath(0)" />
+                          </InArgument>
+                        </scg:List>
+                      </ui:SendOutlookMail.Files>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:SendOutlookMail>
+                  </FlowStep>
+                </FlowSwitch>
               </FlowStep.Next>
             </FlowStep>
           </FlowStep.Next>
@@ -209,7 +263,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">1300,374</av:Point>
                   <av:Size x:Key="ShapeSize">200,54</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">1400,428 1400,545.6666666666666 1200,545.6666666666666</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">1400,428 1400,458 1240,458 1240,486.66666666666663</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
@@ -243,6 +297,9 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
   </Flowchart>
 </Activity>

@@ -13,7 +13,7 @@
   <sap:VirtualizedContainerService.HintSize>844,1185.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Move_Downloaded_Files_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="28">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -41,10 +41,11 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -110,7 +111,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,223</av:Point>
           <av:Size x:Key="ShapeSize">200,54</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,277 300,327.6666666666667</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,277 300,307 308,307 308,327.6666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:MultipleAssign DisplayName="Assign Date &amp; Time" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
@@ -161,21 +162,67 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,327.6666666666667</av:Point>
-              <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,412.33333333333337 300,463</av:PointCollection>
+              <av:Size x:Key="ShapeSize">216,84.66666666666667</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">308,412.33333333333337 308,442.3333333333333 300,442.3333333333333 300,463</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Move And Rename File" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Move And Rename File" sap:VirtualizedContainerService.HintSize="540.6666666666666,2038" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="booManageFilePath" />
+              <Variable x:TypeArguments="x:Boolean" Name="booLineItemFilePath" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder with Today's Date" sap:VirtualizedContainerService.HintSize="338,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)]" />
-            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_CustomerLineItemsName+&quot;.xlsx&quot;]" DisplayName="Move CustomerLineItemFile" sap:VirtualizedContainerService.HintSize="338,164.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[strManageCustomerFilePath]" />
-            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_OpenLineItemsName+&quot;.xlsx&quot;]" DisplayName="Move Line Item File" sap:VirtualizedContainerService.HintSize="338,164.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[strOpenLineFilePath]" />
-            <ui:RenameFileX DisplayName="Rename Manage Customer Line Item File" FilePath="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_CustomerLineItemsName+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[in_CustomerLineItemsName+strDateTime]" />
-            <ui:RenameFileX DisplayName="Rename File for open Line Items" FilePath="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_OpenLineItemsName+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="RenameFileX_3" KeepExtension="True" NewName="[&quot;GL &quot;+in_OpenLineItemsName+strDateTime]" />
+            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder with Today's Date" sap:VirtualizedContainerService.HintSize="478.6666666666667,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)]" />
+            <ui:MoveFile DestinationResource="{x:Null}" PathResource="{x:Null}" ContinueOnError="True" Destination="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_CustomerLineItemsName+&quot;.xlsx&quot;]" DisplayName="Move CustomerLineItemFile" sap:VirtualizedContainerService.HintSize="478.6666666666667,164.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[strManageCustomerFilePath]" />
+            <ui:MoveFile DestinationResource="{x:Null}" PathResource="{x:Null}" ContinueOnError="True" Destination="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_OpenLineItemsName+&quot;.xlsx&quot;]" DisplayName="Move Line Item File" sap:VirtualizedContainerService.HintSize="478.6666666666667,164.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[strOpenLineFilePath]" />
+            <ui:PathExists Resource="{x:Null}" DisplayName="Manage Customer Line Item File Path Exist" Exists="[booManageFilePath]" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_CustomerLineItemsName+&quot;.xlsx&quot;]" PathType="File" />
+            <ui:PathExists Resource="{x:Null}" DisplayName="GL Line Item File Path Exist" Exists="[booLineItemFilePath]" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_OpenLineItemsName+&quot;.xlsx&quot;]" PathType="File" />
+            <If Condition="[booManageFilePath]" sap:VirtualizedContainerService.HintSize="478.6666666666667,546" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,258.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:RenameFileX DisplayName="Rename Manage Customer Line Item File" FilePath="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_CustomerLineItemsName+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[in_CustomerLineItemsName+strDateTime]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[booLineItemFilePath]" sap:VirtualizedContainerService.HintSize="478.6666666666667,546" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,258.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:RenameFileX DisplayName="Rename File for open Line Items" FilePath="[in_OutputFilePath+Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;\&quot;+in_OpenLineItemsName+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="338,148" sap2010:WorkflowViewState.IdRef="RenameFileX_3" KeepExtension="True" NewName="[&quot;GL &quot;+in_OpenLineItemsName+strDateTime]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID1">
@@ -186,7 +233,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,517 300,567</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Assign File Paths" sap:VirtualizedContainerService.HintSize="431.3333333333333,192.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign DisplayName="Assign File Paths" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
