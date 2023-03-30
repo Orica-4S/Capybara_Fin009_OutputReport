@@ -157,7 +157,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
               <FlowStep.Next>
-                <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID0" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID0" DisplayName="Flow Switch" Expression="[in_int_NoOfAttachments]" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
                   <FlowSwitch.Default>
                     <FlowStep x:Name="__ReferenceID6">
                       <sap:WorkflowViewStateService.ViewState>
@@ -166,7 +166,7 @@
                           <av:Size x:Key="ShapeSize">200,54</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="SendMail_No Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
+                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" Cc="[in_dictConfig(&quot;EmailTo_Support&quot;).ToString]" DisplayName="SendMail_No Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_dictConfig(&quot;EmailTo_Business&quot;).ToString]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
                         </ui:SendOutlookMail.Files>
@@ -178,9 +178,6 @@
                       </ui:SendOutlookMail>
                     </FlowStep>
                   </FlowSwitch.Default>
-                  <FlowSwitch.Expression>
-                    <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_int_NoOfAttachments" />
-                  </FlowSwitch.Expression>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,7 +196,7 @@
                         <av:Size x:Key="ShapeSize">200,54</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="SendMail_2 Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
+                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" Cc="[in_dictConfig(&quot;EmailTo_Support&quot;).ToString]" DisplayName="SendMail_2 Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_dictConfig(&quot;EmailTo_Business&quot;).ToString]">
                       <ui:SendOutlookMail.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                           <InArgument x:TypeArguments="x:String">[in_AttachmentPath(0)]</InArgument>
@@ -220,12 +217,10 @@
                         <av:Size x:Key="ShapeSize">200,54</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" DisplayName="SendMail_1 Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_EmailTo]">
+                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[str_EmailBody]" Cc="[in_dictConfig(&quot;EmailTo_Support&quot;).ToString]" DisplayName="SendMail_1 Attachment" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_EmailSubject]" To="[in_dictConfig(&quot;EmailTo_Business&quot;).ToString]">
                       <ui:SendOutlookMail.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                          <InArgument x:TypeArguments="x:String">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AttachmentPath(0)" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String">[in_AttachmentPath(0)]</InArgument>
                         </scg:List>
                       </ui:SendOutlookMail.Files>
                       <sap:WorkflowViewStateService.ViewState>
