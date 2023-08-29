@@ -119,7 +119,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Process title- Capybara_CapyFin009_OutputReport [Version 1.0.9]&#xA;Process description - This Process would go to Manage Customer Line Items &amp; Display Line items in General Ledger Tile &#xA;then it would Input the details required and it would then select the Layout of the Columns and also would apply the manual filters and would download the reports and send Mail.&#xA;Author- sahil.baid@orica.com" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687.3333333333334,838" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Process title- Capybara_CapyFin009_OutputReport [Version 1.0.10]&#xA;Process description - This Process would go to Manage Customer Line Items &amp; Display Line items in General Ledger Tile &#xA;then it would Input the details required and it would then select the Layout of the Columns and also would apply the manual filters and would download the reports and send Mail.&#xA;Author- sahil.baid@orica.com" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687.3333333333334,838" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -321,7 +321,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used and send the Mail." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,142" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
               <State.Entry>
-                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="579.3333333333334,1252.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="579.3333333333334,1516.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -329,7 +329,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence sap:VirtualizedContainerService.HintSize="540.6666666666666,1013.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                    <Sequence sap:VirtualizedContainerService.HintSize="540.6666666666666,1277.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_32">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Boolean" Name="booManageFilePath" />
                         <Variable x:TypeArguments="x:Boolean" Name="booLineItemFilePath" />
@@ -341,9 +341,9 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[&quot;Closing all Applications..&quot;]" />
                       <k:KillApps AppsToClose="[Config(&quot;Applications&quot;).ToString]" sap:VirtualizedContainerService.HintSize="478.6666666666667,92" sap2010:WorkflowViewState.IdRef="KillApps_1" />
-                      <If Condition="[SystemException is Nothing]" sap:VirtualizedContainerService.HintSize="478.6666666666667,634.6666666666666" sap2010:WorkflowViewState.IdRef="If_16">
+                      <If Condition="[SystemException is Nothing]" sap:VirtualizedContainerService.HintSize="478.6666666666667,898.6666666666666" sap2010:WorkflowViewState.IdRef="If_16">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,358" sap2010:WorkflowViewState.IdRef="Sequence_33">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -356,10 +356,11 @@
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
+                            <Delay Duration="[TimeSpan.FromSeconds(Integer.Parse(Config(&quot;SmallDelay&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,358" sap2010:WorkflowViewState.IdRef="Sequence_34">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -380,6 +381,7 @@
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dictConfig">[Config]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
+                            <Delay Duration="[TimeSpan.FromSeconds(Integer.Parse(Config(&quot;SmallDelay&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Delay_2" />
                           </Sequence>
                         </If.Else>
                       </If>

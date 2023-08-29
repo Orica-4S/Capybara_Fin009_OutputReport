@@ -3,20 +3,19 @@
   "description": "Downloading Output Reports For Fin009",
   "main": "Main.xaml",
   "dependencies": {
-    "Capybara_Fin009-OutputReports_UILibrary": "[1.0.1]",
+    "Capybara_Fin009-OutputReports_UILibrary": "[1.0.2]",
     "KillApps": "[1.0.6]",
     "SAPFioriLogin": "[1.0.4]",
     "UiPath.Excel.Activities": "[2.16.1]",
     "UiPath.Mail.Activities": "[1.18.2]",
     "UiPath.System.Activities": "[22.10.4]",
-    "UiPath.Testing.Activities": "[22.10.1]",
-    "UiPath.UIAutomation.Activities": "[22.10.5]"
+    "UiPath.Testing.Activities": "[22.10.1]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.5.0",
-  "projectVersion": "1.0.8",
+  "projectVersion": "1.0.11",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
