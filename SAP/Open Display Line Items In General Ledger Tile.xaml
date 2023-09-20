@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1144.6666666666667,2909.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1144,3942</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Display_Line_Items_In_General_Ledger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,7 +100,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Workflow Name]:-&#xA;Display Line Items In General Ledger&#xA;&#xA;[Description]:- This workflow would open Display Line Items in General Ledger Tile in SAP .&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_LargeDelay - Large Delay&#xA;in_MediumDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Display Line Items In General Ledger" sap:VirtualizedContainerService.HintSize="1154.6666666666667,2844.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Workflow Name]:-&#xA;Display Line Items In General Ledger&#xA;&#xA;[Description]:- This workflow would open Display Line Items in General Ledger Tile in SAP .&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_LargeDelay - Large Delay&#xA;in_MediumDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Display Line Items In General Ledger" sap:VirtualizedContainerService.HintSize="1154,3877" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="RetryCount" />
     </Sequence.Variables>
@@ -110,8 +110,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1092.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening&quot;+&quot; &quot;+ in_ModuleName]" />
-    <TryCatch DisplayName="Try Catch for Opening Required Module" sap:VirtualizedContainerService.HintSize="1092.6666666666667,2169.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1092,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening&quot;+&quot; &quot;+ in_ModuleName]" />
+    <TryCatch DisplayName="Try Catch for Opening Required Module" sap:VirtualizedContainerService.HintSize="1092,3247" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -119,63 +119,129 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope for Opening Required Module" sap:VirtualizedContainerService.HintSize="1054,1930" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
+        <ui:RetryScope DisplayName="Retry Scope for Opening Required Module" sap:VirtualizedContainerService.HintSize="1054,3019" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1012,1334.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1012,2435" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="SAP Fiori  Home Screen" sap:VirtualizedContainerService.HintSize="950,1224" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="SAP Fiori  Home Screen" sap:VirtualizedContainerService.HintSize="950,2324" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,1004.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,2107" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NCheckState DisplayName="Check App State 'Search Box'" sap:VirtualizedContainerService.HintSize="854,888.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Timeout="[in_LargeDelay]" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Search Box'" sap:VirtualizedContainerService.HintSize="854,676" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Timeout="[in_LargeDelay]" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,667.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,402" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Search Box'" sap:VirtualizedContainerService.HintSize="338,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V3">
+                              <uix:NClick ClickType="Single" DelayBefore="5" DisplayName="Click 'Search Box'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V3">
                                 <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Shell-home" ContentHash="JcE_Egsf5UWeuoeyuU3xyg" DesignTimeRectangle="1727, 117, 66, 66" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Search Box'" FullSelectorArgument="&lt;webctrl aria-label='Search' aria-role='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Search' aria-role='button' tag='A' type='' class='sapUshellHeaderHideSeparators sapUshellShellHeadItm' aaname='' check:text='unchecked' /&gt;" Guid="8ce2c239-8d5f-4fb5-8a6b-bc075065a90e" ImageBase64="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" InformativeScreenshot="5eaed925bcffa0e460ef57ddbecd45c6.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/tN2K9hcGYkufchNJhL7sqg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Home*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                  <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Shell-home" ContentHash="_NfZnhI8C0qHAC-gY2Gnbg" DesignTimeRectangle="1212, 83, 36, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Search Box'" FullSelectorArgument="&lt;webctrl aria-label='Open Search' aria-role='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Open Search' aria-role='button' tag='A' type='' class='sapUshellShellHeadItm' aaname='' check:text='unchecked' /&gt;" Guid="8ce2c239-8d5f-4fb5-8a6b-bc075065a90e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQHSURBVFhHzVVLTxNRFO6PciEb/4HxsTAmGqOLLti4cGPEmLhRHgmJBqNRowEVjFYBH5S+eEiLhRah5VEKcUehUIt/4fOcM70zd6bTafE1XZw5+e4598x3v3vuvYGJpR2EycR/a+B9jAtBPamR+RU3FPxWEmAxbx8cMAfJbEltgh0Ktp8XBZltu/o6BY2gwkp2/+KGgspqg+2EA8agxbzdvF3BNjRRcNLB/Cg4QkViK7uILpcQJc844pF/VBwQoDGWJA03ikeWd5DI7+LL+j6ShX3Mb+4jRZ4xj0eIsNd8Zc3iloIExLeAWbHZ9TIyy1k87XmIs8FuHLtCFuxDsGccbzJlIlqWvN+pr2NTQcsbzOvHDR9bKWFuo4yZ0UGcCQ7g7lgO8UIFC8UKFgvbmBx7iYvBflwNFSRPSNrqeNd3xuWQNE62e962mbU9LIYHcbJzECMrVVEqkd9DLFcS/4VILeXm0NXZj+vhHcnn/mylvpsXBZm1PmhgayUqziTSxSx66ed3pquyzayQPp8xk16ZHqFFDOH1RgWJHOc0r+8WtyvoXKmGecL0WhkLH5+h48YkEsUDxOkwuOXHidDX4hae3+jGtdFdzKyWZb5X/UbYpqCX5+1lZT7f68OFZ5vUX/uydW75PM7x1PAAjvdnZR7Pd6vbzBNBAjRZMW6E+Vrhn37o7cbl4W3Z3ggdGLd8Hud4kgge601jjq4fnq/Xa/Y/hQPGoDKVVI9NBe+zgkVLQZf8egWZoBV3q98ImwqytxexY34hZqgHF2s9OEU9yBeyWz73Zlr14Bj1IM2TF0arp+d74ZqCapDMA3Pzp7fStVN8KMrE5IRa+Yz5/ltNvcd5OsWhrSqmeCEu9VrBoqBi3sxHubfoXsvIPTiEkVxVyEyt7hH5EqbJJwnn15K43UkvS+cLjBd/Sk6UerDV/+g+YAAyPajMTLYwq8hvbyL0BCeDD9AtL8kPLGxVkKGXJDb+Epfo6evgp4+s4+YYJjYOjW1WJD3qO+NHUlB5JjlHByabncfDnke2t/jirbcI5StYT7zCOUWy6xOixaqdZAv/YW8qyF4Zs7d5lzi/yby1cloLB3Qxk20eiLp8xaTpbc7Hh3BaJ/m9Km2g1xHv8f/fUlD33FusKBNmz1cM92qcbJ4I52MWyRNdUYRpAZzXan1R8F8Zv8GsajY8hFNC8gkeL1WEoFu+m5kKOnvjb2FWNkltMJtK4V1mj7aYVKaxVuf/UwWVMUm+1FlRg1zrJgS5bxRjE5sr8Tf+XxT8EyOC9ELUgJLfxOL9jZsKqsFG5lfc6EFh7lwJYbUiH+MB/nDADDq9z3FNwfb0loLKK3OO+xQPKKAYG9h4ivTJfsXrFWSvzDn+3+Ml/AK87RF6gw+DMQAAAABJRU5ErkJggg==" InformativeScreenshot="559b31d5c3f3c25423f5d0dae5f63b5a.png" Reference="tnutLbMXZk6h2u2iXlkr1A/tN2K9hcGYkufchNJhL7sqg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <Delay Duration="[in_MediumDelay]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search In Apps'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Text="[in_ModuleName + &quot;[k(enter)]&quot;]" Version="V3">
+                              <Delay Duration="[in_MediumDelay]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,459" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Search Button Not Visible&quot;]" />
+                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="338,82" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" Version="V3" />
+                              <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Shell-home" ContentHash="_NfZnhI8C0qHAC-gY2Gnbg" DesignTimeRectangle="1212, 83, 36, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Search Box'" FullSelectorArgument="&lt;webctrl aria-label='Open Search' aria-role='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Open Search' aria-role='button' tag='A' type='' class='sapUshellShellHeadItm' aaname='' check:text='unchecked' /&gt;" Guid="8ce2c239-8d5f-4fb5-8a6b-bc075065a90e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQHSURBVFhHzVVLTxNRFO6PciEb/4HxsTAmGqOLLti4cGPEmLhRHgmJBqNRowEVjFYBH5S+eEiLhRah5VEKcUehUIt/4fOcM70zd6bTafE1XZw5+e4598x3v3vuvYGJpR2EycR/a+B9jAtBPamR+RU3FPxWEmAxbx8cMAfJbEltgh0Ktp8XBZltu/o6BY2gwkp2/+KGgspqg+2EA8agxbzdvF3BNjRRcNLB/Cg4QkViK7uILpcQJc844pF/VBwQoDGWJA03ikeWd5DI7+LL+j6ShX3Mb+4jRZ4xj0eIsNd8Zc3iloIExLeAWbHZ9TIyy1k87XmIs8FuHLtCFuxDsGccbzJlIlqWvN+pr2NTQcsbzOvHDR9bKWFuo4yZ0UGcCQ7g7lgO8UIFC8UKFgvbmBx7iYvBflwNFSRPSNrqeNd3xuWQNE62e962mbU9LIYHcbJzECMrVVEqkd9DLFcS/4VILeXm0NXZj+vhHcnn/mylvpsXBZm1PmhgayUqziTSxSx66ed3pquyzayQPp8xk16ZHqFFDOH1RgWJHOc0r+8WtyvoXKmGecL0WhkLH5+h48YkEsUDxOkwuOXHidDX4hae3+jGtdFdzKyWZb5X/UbYpqCX5+1lZT7f68OFZ5vUX/uydW75PM7x1PAAjvdnZR7Pd6vbzBNBAjRZMW6E+Vrhn37o7cbl4W3Z3ggdGLd8Hud4kgge601jjq4fnq/Xa/Y/hQPGoDKVVI9NBe+zgkVLQZf8egWZoBV3q98ImwqytxexY34hZqgHF2s9OEU9yBeyWz73Zlr14Bj1IM2TF0arp+d74ZqCapDMA3Pzp7fStVN8KMrE5IRa+Yz5/ltNvcd5OsWhrSqmeCEu9VrBoqBi3sxHubfoXsvIPTiEkVxVyEyt7hH5EqbJJwnn15K43UkvS+cLjBd/Sk6UerDV/+g+YAAyPajMTLYwq8hvbyL0BCeDD9AtL8kPLGxVkKGXJDb+Epfo6evgp4+s4+YYJjYOjW1WJD3qO+NHUlB5JjlHByabncfDnke2t/jirbcI5StYT7zCOUWy6xOixaqdZAv/YW8qyF4Zs7d5lzi/yby1cloLB3Qxk20eiLp8xaTpbc7Hh3BaJ/m9Km2g1xHv8f/fUlD33FusKBNmz1cM92qcbJ4I52MWyRNdUYRpAZzXan1R8F8Zv8GsajY8hFNC8gkeL1WEoFu+m5kKOnvjb2FWNkltMJtK4V1mj7aYVKaxVuf/UwWVMUm+1FlRg1zrJgS5bxRjE5sr8Tf+XxT8EyOC9ELUgJLfxOL9jZsKqsFG5lfc6EFh7lwJYbUiH+MB/nDADDq9z3FNwfb0loLKK3OO+xQPKKAYG9h4ivTJfsXrFWSvzDn+3+Ml/AK87RF6gw+DMQAAAABJRU5ErkJggg==" InformativeScreenshot="559b31d5c3f3c25423f5d0dae5f63b5a.png" Reference="tnutLbMXZk6h2u2iXlkr1A/tN2K9hcGYkufchNJhL7sqg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                        </uix:NCheckState>
+                        <uix:NCheckState DisplayName="Check App State 'Search Option All'" sap:VirtualizedContainerService.HintSize="854,747" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Timeout="180" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,530" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search In Apps'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Text="[in_ModuleName + &quot;[k(enter)]&quot;]" Version="V3">
                                 <uix:NTypeInto.Target>
                                   <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Shell-home" ContentHash="bQGfTL2idUOiSUWBUvyY4Q" DesignTimeRectangle="995, 85, 295, 17" DesignTimeScaleFactor="0.6700000166893005" ElementType="InputBox" FriendlyName="'Search In Apps'" FullSelectorArgument="&lt;webctrl tag='DIV' id='searchFieldInShell-input' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' id='searchFieldInShell-input' type='' class='sapMInput sapMInputBase sapMInputBaseHeightMargin searchInput sapMFocus sapMInputFocused' aaname='' /&gt;" Guid="409e7d8b-6703-4ef6-bb0b-2396299b7004" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASsAAAAVCAYAAAAeo8jdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOrSURBVHhe7ZhnS2NBGIXzd3d/wX61YEQFGxbUSDR2P6jYMVEkKBiyhAQriiSoWMFesL3Leb0j45qIiWhu4DxwmHLvzJ0IHs68nl9/vEJRFOV20awoiioIeaJ/Y9qZm5ujKIpypXz+wFuz8ng8KsCWLVu2bmjTmhUhhLiNjMkqHZnmCSHkO8k6WRmzWl9fl5qaGikuLpaBgQF5fHzU+a9yf38vvb29cnx87My8Z2RkRLa2tpzR58D5BgcHpaenx5khhBQaWSer09NT6erqkpubGzWXyclJubi4cN74Gtgb5od903F9fS1+v1/Oz8+dmc+xtram5xwdHXVmCCGFRE7JKpVKSXNz87v0s7y8LPX19VJVVaV7PD09STAYlNbWVqmtrZVEIqEm1NnZKXV1dbK4uKgJrbGxUaqrq2V6elpNpaWlRd9Hatve3nZ2f2F/f1/6+/vl9vZW+vr61DRLSkpe093Gxobu//Dw4KwQubq6kqGhITk8PJTu7m5de3l5qeeCioqK9Pnz87OEw2Hx+XxSUVEhZWVl+j38XpyxoaHhw78NIeR7SWtWHyUrmML8/LyUlpaqOSEN7e3tyfDwsD7DGKZwd3fnrBJJJpNqRnjW1tamSQxrcDWzr5Awt6WlJe3PzMyoedlEIhEJhUK6DxIWjAh9GFimNAZTxD4wKSQrtDAgmBr6WB8IBDQpYp+VlRVdNzU1pQYLI9vd3dU5Qkh+yClZGZBEYBwwFbRNTU2adqCFhQU5ODjQ5NLR0aH1rXg8rqYxPj6u67EmFotpH9j1KrtvY+pV9j52/3+Ojo40JcFYIfRxhYTpQcCkNRgozo6rJjDfgnB+JKuzszN9Rgj5ebJOVjAZGJUpWuOqZicSALNBMRtXL6QXpBiYwuzs7GtawhrTB0g4pl5l9w12vcrex+7b4IyoUyHBASQ9JD7sjbOtrq7qO0hzME2kLeyPb56cnOg7ODvAe/itOzs7OiaE/Cw5JSskJdSTKisrJRqN6j8y0ofX69XaDq6DMAaYDWpb+Kdvb2/X5GKnJaxBXai8vFwmJia05vVRWrLrVekS2ObmppqiMTiMcRacz4ArHcwVpoS6GdISrqcwXiQtnBfzaPE9JESMcX5cIe0rKyHkZ8k6WRU6SFBjY2PO6AUYGowMBkUIcR85JatCx65XGXDFtOtVhBD3kVWyIoSQfJB1siKEkHzxxqx+W8nKpCu2bNmydUOb1qwoiqLcKDUrGBVFUZTbRbOiKKoA5JV/euLajw1pKNAAAAAASUVORK5CYII=" InformativeScreenshot="6289063eb3a6b658268989f1828d7d39.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/YZ3Of9aHDUun9CQpzq3vpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                                 </uix:NTypeInto.Target>
                               </uix:NTypeInto>
+                              <uix:NClick ClickType="Single" DisplayName="Click 'Button_Image_PostSearch'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Shell-home" ContentHash="8-zPjgBdZE2PfOZL0EBDKw" DesignTimeRectangle="1296, 86, 11, 16" DesignTimeScaleFactor="0.6700000166893005" FriendlyName="'Button_Image_PostSearch'" FullSelectorArgument="&lt;webctrl id='searchFieldInShell-button-img' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchFieldInShell-button-img' tag='SPAN' type='' class='sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon' aaname='' /&gt;" Guid="9ec26d66-1f02-460f-b649-de7dedc13892" InformativeScreenshot="02fe4d0bc21bb71c8d0e6357d8f73b8e.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/dvNC9epOykakZ1SpcwGQPQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
                             </Sequence>
                           </uix:NCheckState.IfExists>
                           <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,468.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,457" sap2010:WorkflowViewState.IdRef="Sequence_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Search Button Not Visible&quot;]" />
-                              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="338,84.66666666666667" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
-                              <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Search Button Not Visible&quot;]" />
+                              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="338,82" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+                              <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_4" />
                             </Sequence>
                           </uix:NCheckState.IfNotExists>
                           <uix:NCheckState.Target>
-                            <uix:TargetAnchorable BrowserURL="https://launchpad-sp.orica.net/fiori#Shell-home" ContentHash="JcE_Egsf5UWeuoeyuU3xyg" DesignTimeRectangle="1727, 117, 66, 66" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Search Box'" FullSelectorArgument="&lt;webctrl aria-label='Search' aria-role='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Search' aria-role='button' tag='A' type='' class='sapUshellHeaderHideSeparators sapUshellShellHeadItm' aaname='' check:text='unchecked' /&gt;" Guid="8ce2c239-8d5f-4fb5-8a6b-bc075065a90e" ImageBase64="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" InformativeScreenshot="5eaed925bcffa0e460ef57ddbecd45c6.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/tN2K9hcGYkufchNJhL7sqg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Home*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                            <uix:TargetAnchorable BrowserURL="https://launchpad-dt.orica.net/fiori#Shell-home" ContentHash="5w4t8G5xikOPj5HMectTNQ" DesignTimeRectangle="589, 88, 82, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Search Option All'" FullSelectorArgument="&lt;webctrl innertext='AllAll' ui5p-selectedKey='All' visibleinnertext='All&amp;#xA;All' /&gt;" FuzzySelectorArgument="&lt;webctrl innertext='AllAll' ui5p-selectedKey='All' visibleinnertext='All&amp;#xA;All' tag='DIV' type='' class='sapMSlt sapMSltDefault sapMSltMinWidth sapMSltAutoAdjustedWidth sapMSltHoverable sapMSltWithArrow searchSelect' aaname='' /&gt;" Guid="dd98232e-e6db-4e6a-a747-5ad399fd1238" InformativeScreenshot="9ebdc40ebd858931036de519a88296dd.png" Reference="tnutLbMXZk6h2u2iXlkr1A/8fh-kPtDI0yeVelMWZtb-w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                           </uix:NCheckState.Target>
+                        </uix:NCheckState>
+                        <uix:NCheckState DisplayName="Check App State 'ED1 DisplayLineItems Tile'" sap:VirtualizedContainerService.HintSize="854,489" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Timeout="180" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,272" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ClickType="Single" DelayBefore="5" DisplayName="Click 'ED1 DisplayLineItems Tile'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a9db87c-dc3e-445c-b1bd-637b8c749613" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://launchpad-dt.orica.net/fiori#Action-search&amp;/top=10&amp;filter=%7B%22dataSource%22%3A%7B%22type%22%3A%22Category%22%2C%22id%22%3A%22All%22%2C%22label%22%3A%22All%22%2C%22labelPlural%22%3A%22All%22%7D%2C%22searchTerm%22%3A%22Display%20Line%20Items%20In%20General%20Ledger%22%2C%22rootCondition%22%3A%7B%22type%22%3A%22Complex%22%2C%22operator%22%3A%22And%22%2C%22conditions%22%3A%5B%5D%7D%7D" ContentHash="ZgsxJ-1As0i41YZPjWn-QA" DesignTimeRectangle="51, 192, 176, 176" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'ED1 DisplayLineItems Tile'" FullSelectorArgument="&lt;webctrl aaname='Display Line Items in General Ledger' aria-label='Display Line Items in General Ledger&amp;#xA;Tile' innertext='Display Line Items in General Ledger' visibleinnertext='Display Line Items in General Ledger' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Display Line Items in General Ledger' aria-label='Display Line Items in General Ledger&amp;#xA;Tile' innertext='Display Line Items in General Ledger' visibleinnertext='Display Line Items in General Ledger' tag='A' type='' class='sapMGT sapMGTStateLoaded sapMGTScopeDisplay OneByOne sapMPointer' check:text='Display Line Items in General Ledger' /&gt;" Guid="7f84d084-d0e9-4af5-a739-7ad3fd072961" InformativeScreenshot="0f8f0d2b8f9635d0556a8deb8cd6af54.png" Reference="tnutLbMXZk6h2u2iXlkr1A/MCmS4qlXi0aZyUtZbUsJ8Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Display Line Items In General Ledger*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,205" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://launchpad-dt.orica.net/fiori#Action-search&amp;/top=10&amp;filter=%7B%22dataSource%22%3A%7B%22type%22%3A%22Category%22%2C%22id%22%3A%22All%22%2C%22label%22%3A%22All%22%2C%22labelPlural%22%3A%22All%22%7D%2C%22searchTerm%22%3A%22Display%20Line%20Items%20In%20General%20Ledger%22%2C%22rootCondition%22%3A%7B%22type%22%3A%22Complex%22%2C%22operator%22%3A%22And%22%2C%22conditions%22%3A%5B%5D%7D%7D" ContentHash="ZgsxJ-1As0i41YZPjWn-QA" DesignTimeRectangle="51, 192, 176, 176" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'ED1 DisplayLineItems Tile'" FullSelectorArgument="&lt;webctrl aaname='Display Line Items in General Ledger' aria-label='Display Line Items in General Ledger&amp;#xA;Tile' innertext='Display Line Items in General Ledger' visibleinnertext='Display Line Items in General Ledger' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Display Line Items in General Ledger' aria-label='Display Line Items in General Ledger&amp;#xA;Tile' innertext='Display Line Items in General Ledger' visibleinnertext='Display Line Items in General Ledger' tag='A' type='' class='sapMGT sapMGTStateLoaded sapMGTScopeDisplay OneByOne sapMPointer' check:text='Display Line Items in General Ledger' /&gt;" Guid="7f84d084-d0e9-4af5-a739-7ad3fd072961" InformativeScreenshot="0f8f0d2b8f9635d0556a8deb8cd6af54.png" Reference="tnutLbMXZk6h2u2iXlkr1A/MCmS4qlXi0aZyUtZbUsJ8Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Display Line Items In General Ledger*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                         </uix:NCheckState>
                       </Sequence>
                     </ActivityAction>
@@ -195,25 +261,25 @@
           </ui:RetryScope.ActivityBody>
           <ui:RetryScope.Condition>
             <ActivityFunc x:TypeArguments="x:Boolean">
-              <uix:NCheckState DisplayName="Check App State 'Display Line Items in General Ledger Tile'" sap:VirtualizedContainerService.HintSize="854,433.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="[in_LargeDelay]" Version="V3">
+              <uix:NCheckState DisplayName="Check App State 'Display Line Items in General Ledger Tile'" sap:VirtualizedContainerService.HintSize="854,424" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="[in_LargeDelay]" Version="V3">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,207" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Successfully Opened &quot;+in_ModuleName]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Successfully Opened &quot;+in_ModuleName]" />
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,205" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    <Throw Exception="[new SystemException(&quot;Failed to open&quot;+&quot; &quot;+in_ModuleName)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </Sequence>
                 </uix:NCheckState.IfNotExists>
                 <uix:NCheckState.Target>
@@ -231,7 +297,7 @@
         </ui:RetryScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1058.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1058,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -242,13 +308,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Sequence - Exception" sap:VirtualizedContainerService.HintSize="400,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Sequence - Exception" sap:VirtualizedContainerService.HintSize="400,335" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_SystemException+&quot; &quot;+in_ModuleName + exception.Message]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_SystemException+&quot; &quot;+in_ModuleName + exception.Message]" />
               <Throw Exception="[new SystemException(in_SystemException+&quot; &quot;+in_ModuleName+&quot; &quot;+exception.Message)]" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
             </Sequence>
           </ActivityAction>
