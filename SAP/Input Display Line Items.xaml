@@ -22,7 +22,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1722,8370</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1722,8560</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Apply_Filters_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -113,7 +113,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input for Line Items File&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input for Line Items File" sap:VirtualizedContainerService.HintSize="1732,8305" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input for Line Items File&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input for Line Items File" sap:VirtualizedContainerService.HintSize="1732,8495" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strUserName" />
     </Sequence.Variables>
@@ -132,35 +132,35 @@
         <InArgument x:TypeArguments="x:String">[in_UserNameAsset]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670,7484" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670,7674" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
         <Variable x:TypeArguments="x:Boolean" Name="booNoDataFound" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7256" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7446" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7008" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7198" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,6897" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,7087" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,6680" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,6870" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,6565" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,6755" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strLayoutName" />
                           </Sequence.Variables>
@@ -201,11 +201,28 @@
                               <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#GLAccount-displayGLLineItemReportingView" ContentHash="rcW5x_ymiEeUl0VuICBhsg" DesignTimeRectangle="795, 356, 326, 43" DesignTimeScaleFactor="1.649999976158142" ElementType="InputBox" FriendlyName="'GL Account'" FullSelectorArgument="&lt;webctrl ui5-label='G/L Account' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-label='G/L Account' tag='DIV' type='' class='sapMInputBase sapMInputBaseHeightMargin sapMInput sapMMultiInput sapMInputBaseHasEndIcons' aaname='' /&gt;" Guid="8952c141-0c2f-4fc1-9e13-f041e6765812" InformativeScreenshot="776c894bb4d782cd4953e3ae79828ffd.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/6YUW4Osa9kew0vD4dULHZw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Display Line Items in General Ledger*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                             </uix:NKeyboardShortcuts.Target>
                           </uix:NKeyboardShortcuts>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ED1 Fiscal Year of Ledger'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="1370,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="%[k(back)]" Version="V3">
-                            <uix:NTypeInto.Target>
-                              <uix:TargetAnchorable BrowserURL="https://launchpad-dt.orica.net/fiori#GLAccount-displayGLLineItemReportingView" ContentHash="DW2XgOb6hkykVKZz6x83Kw" DesignTimeRectangle="252, 286, 192, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'ED1 Fiscal Year of Ledger'" FullSelectorArgument="&lt;webctrl ui5-class='sap.ui.comp.smartfilterbar.SFBMultiInput' ui5-label='Fiscal Year of Ledger' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-class='sap.ui.comp.smartfilterbar.SFBMultiInput' ui5-label='Fiscal Year of Ledger' tag='DIV' type='' class='sapMInputBase sapMInputBaseHeightMargin sapMInput sapMMultiInput sapMMultiInputHasTokens sapMInputBaseHasEndIcons' aaname='' /&gt;" Guid="54fea215-648a-482e-941b-f48fed283dc4" InformativeScreenshot="95c756b538577008d6efca918f554a3a.png" Reference="tnutLbMXZk6h2u2iXlkr1A/1BaPN9-tAkyL8qRnAi_bIA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Display Line Items in General Ledger*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
-                            </uix:NTypeInto.Target>
-                          </uix:NTypeInto>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1370,408" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,329" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ED1 Fiscal Year of Ledger'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="%[k(back)]" Version="V3">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://launchpad-dt.orica.net/fiori#GLAccount-displayGLLineItemReportingView" ContentHash="DW2XgOb6hkykVKZz6x83Kw" DesignTimeRectangle="252, 286, 192, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'ED1 Fiscal Year of Ledger'" FullSelectorArgument="&lt;webctrl ui5-class='sap.ui.comp.smartfilterbar.SFBMultiInput' ui5-label='Fiscal Year of Ledger' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-class='sap.ui.comp.smartfilterbar.SFBMultiInput' ui5-label='Fiscal Year of Ledger' tag='DIV' type='' class='sapMInputBase sapMInputBaseHeightMargin sapMInput sapMMultiInput sapMMultiInputHasTokens sapMInputBaseHasEndIcons' aaname='' /&gt;" Guid="54fea215-648a-482e-941b-f48fed283dc4" InformativeScreenshot="95c756b538577008d6efca918f554a3a.png" Reference="tnutLbMXZk6h2u2iXlkr1A/1BaPN9-tAkyL8qRnAi_bIA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Display Line Items in General Ledger*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                  </uix:NTypeInto.Target>
+                                </uix:NTypeInto>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
                           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1370,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,329" sap2010:WorkflowViewState.IdRef="Sequence_16">
@@ -295,7 +312,7 @@
                               <uix:TargetAnchorable ContentHash="2JlJT8FzU0iCF2N3tLUYgw" DesignTimeRectangle="373, 190, 153, 24" DesignTimeScaleFactor="1" FriendlyName="'ED1 Filter By'" FullSelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Filter by' role='combo box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Filter by' role='combo box' automationid='' /&gt;" Guid="0a8cfade-9cc7-4768-8670-eceafdf8ced8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJ0AAAAcCAYAAAB7yr2rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOYSURBVHhe7ZsJTxNRFEb90SoKuJS1pVBaoLIGBGQpIBoEDAS0gKjs+2JiDFsEoVC6t4Rwne/aqbW0IQ4yreSe5KWdN2+WpKffvdOkd0gQdIal8/h8VN/iIJOtToaMGx8sHYT7+m0LbwXhxmHpYJ8g6IVIJ+iOSCfojkgn6I5IJ+iOSCfozrWkm/gwSXezsi+NqZlZOjpyUV//IJ16PHR2dka19Y28/ibAtUxmC23v7ERnhExGs3QXFxfU3NpG7Z1dLJY6PF4vnZ+f0+g7J5ktVnK73SyFsaSMtra2+diV1TWqrm2gUCjM29dlaXmFym1VFAgEozNCJqNZOp/PR6ZSCy0sLkVnUrOx+YVKy218DOh++UpJwQF+/y/AuV60d/IXQch8NEuH1Coymun7/n505jdIHIutMiYkpEAqBoNBqqiqjpVhrMHakxM3NTW3Ulb2I7r3ICe6NsTHolTjGMwZ8osuXQ9pWfWshq9Raa/m43MeG2hxaZn3Q3AcGy/k7Nw8lVkryKuksqA/mqVL1s/df5jLqQYxkIJ4Tezn0Heh/0LJBa7jYy7DQ8MjFA6H+ZhiUynNzM7xfkiT+8RAn6emyef3X0oznCevoJgF3t7ZJa+Spq1tHSxqKBTi60JKtZRDNKxd39jkbUF/NEl3VT+nphM+9MR+DvtUCXCerp5eHqpManINj4zGEtM5NsH7koF+Lr/QSIeHR9EZ4oSF9Cjn+BJAYtwfrvFmYJAcXT18n0J60CTdVf0c0gkDxPdz+NDRe6n9HCRFiU5MTJTI1bX1PxIzFcn6OcwhXZGyu3t7fA28ImWtlXZ+uBHShybptPRzkAL78JSJdAKQIL/IlPKnjvjETEZ8Kqr4/QGyVthp8uMn3obYRnMZLa+sUuPzFppfWOR5IX1okg59UioZ4tNJ7edQ0iAI0qag2ERr6xv8UOF2n7K8b4eGKRKJkMt1rCRkL6cjiE/MZKB0G5R+DveCXg3CQXB7TV3sQSSsnBfbdQ1N1NbhkLKaAfy1dEgsfLCpZIhPJ3zAaOpRLpFuBwc/qNBYwtvvneO8HmX0qfJUirKap/RmzrFxiiiyJiZmMnBOPIV2OLr5yRcD9xYIBKIrfoHeE3JDaiH9aEq6/wkkLH6Inpqeic4I6eZWS6eWWyShlNXM4dZKh/KPcvu6r5/LtZA53PryKmQeIp2gOyKdoDssnfwFUdATls7jlT9by9BvsHSCoB9EPwHMzNxnN1X4rAAAAABJRU5ErkJggg==" InformativeScreenshot="505f9d15b2b3aca29178b5eaed2f3df7.png" Reference="tnutLbMXZk6h2u2iXlkr1A/c4dBJdv5okKq4ereU6sCVw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Manage Customer Line Items - Profile 1 - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" Version="V1" Visibility="Interactive" />
                             </uix:NTypeInto.Target>
                           </uix:NTypeInto>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ED1 JournalEntryType Value'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="1370,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[in_FilterValue1 + &quot;[k(enter)]&quot;]" Version="V3">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Type Into 'ED1 JournalEntryType Value'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="1370,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[in_FilterValue1 + &quot;[k(enter)]&quot;]" Version="V3">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable ContentHash="-BnbScy2GE-WUnwuoVZMtw" DesignTimeRectangle="568, 191, 306, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'ED1 JournalEntryType Value'" FullSelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Journal Entry Type' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Journal Entry Type' role='editable text' automationid='' /&gt;" Guid="fef55be2-2bdf-4662-bb4b-a41fd8771da3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATYAAAAcCAYAAADr/JNNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVHhe7d2xCQJREEVR2zc01czMnkRsYd0CvizI9ODlHHjBNHDTOS2AmAnbtu/rdn+s8+VqZvbXm7AdUXu+3r8L4H9N2I7KARQIG5AjbECOsAE5wgbkCBuQI2xAjrABOcIG5AgbkCNsQI6wATnCBuQIG5AjbECOsAE5wgbkCBuQI2xAjrABOcIG5AgbkDNh834PqJiwbR8Pk82ssQkbQMNaX/L569WoY+KgAAAAAElFTkSuQmCC" InformativeScreenshot="0b0bb385cf88b5346162cfb8421f89f2.png" IsResponsive="True" Reference="tnutLbMXZk6h2u2iXlkr1A/9j2Izp3AoUaDJvhVfu2F0A" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='*Chrome*' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" Version="V1" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
