@@ -22,7 +22,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1722,8560</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1722,8890</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Apply_Filters_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -113,7 +113,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input for Line Items File&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input for Line Items File" sap:VirtualizedContainerService.HintSize="1732,8495" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="[Workflow Name]:-&#xA;Input for Line Items File&#xA;&#xA;[Description]:- This workflow would Input all the required details to generate &quot;Manage Customer Items&quot; File and wouyld Download the File.&#xA;&#xA;&#xA;[Pre-requisites]:-&#xA;All records are processed&#xA;&#xA;[Config values]:-&#xA;&#xA;[Input]:-&#xA;in_ModuleName - Tile Name to Search For&#xA;in_Status - Status Input&#xA;in_FilterName1 - Filter Name &quot;Journal Entry Type&quot; &#xA;in_FilterName2 - Filter Name &quot;JE Created By&quot; &#xA;in_FilterValue1 -  Filter Value for &quot;Journale Entry Type&quot;&#xA;in_FilterValue2 -  Filter Value for &quot;JE Created By&quot;&#xA;in_CompanyCodes - Company Codes&#xA;in_LargeDelay - Large Delay&#xA;in_SamllDelay - Small Delay&#xA;in_SystemException - System Exception Message&#xA;&#xA;&#xA;[Output]:-&#xA;&#xA;[Remarks]:- &#xA;In case of any errors the workflow will capture the error,log custom message  and rethrow the error.&#xA;&#xA;[Author]:- &#xA;@sahil.baid@orica.com" DisplayName="Input for Line Items File" sap:VirtualizedContainerService.HintSize="1732,8825" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strUserName" />
     </Sequence.Variables>
@@ -132,35 +132,35 @@
         <InArgument x:TypeArguments="x:String">[in_UserNameAsset]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670,7674" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1670,8004" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
         <Variable x:TypeArguments="x:Boolean" Name="booNoDataFound" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7446" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1632,7776" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_RetryCount]" RetryInterval="[in_RetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7198" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1590,7528" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,7087" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Display General Items Screen" sap:VirtualizedContainerService.HintSize="1528,7417" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,6870" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1494,7200" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,6755" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1432,7085" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strLayoutName" />
                           </Sequence.Variables>
@@ -297,17 +297,40 @@
                               <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASLPLKDZYR5DGAURSNF4Z6YOLKXZJUDKQPAUBV6S" ContentHash="A-xjH1WiWkCZZnVygZVxGg" DesignTimeRectangle="1742, 514, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings BTN'" FullSelectorArgument="&lt;webctrl ui5-tooltip='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-tooltip='Settings' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBarChild' aaname='Settings' check:text='Settings' /&gt;" Guid="88be3346-6760-491c-8654-13a469eaf557" InformativeScreenshot="67f9735a0e052d9ff733e4883aacf86f.png" Reference="tnutLbMXZk6h2u2iXlkr1A/noC040GtB0WhB_t5QtfQsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                             </uix:NCheckState.Target>
                           </uix:NCheckState>
-                          <uix:NClick ClickType="Single" DisplayName="Click 'Settings BTN'" sap:VirtualizedContainerService.HintSize="1370,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASLPLKDZYR5DGAURSNF4Z6YOLKXZJUDKQPAUBV6S" ContentHash="A-xjH1WiWkCZZnVygZVxGg" DesignTimeRectangle="1742, 514, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings BTN'" FullSelectorArgument="&lt;webctrl ui5-tooltip='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-tooltip='Settings' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBarChild' aaname='Settings' check:text='Settings' /&gt;" Guid="88be3346-6760-491c-8654-13a469eaf557" InformativeScreenshot="67f9735a0e052d9ff733e4883aacf86f.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/noC040GtB0WhB_t5QtfQsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
+                          <uix:NCheckState DisplayName="Check App State 'Settings BTN'" sap:VirtualizedContainerService.HintSize="1370,487" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Timeout="30" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,270" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Settings BTN'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASLPLKDZYR5DGAURSNF4Z6YOLKXZJUDKQPAUBV6S" ContentHash="A-xjH1WiWkCZZnVygZVxGg" DesignTimeRectangle="1742, 514, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings BTN'" FullSelectorArgument="&lt;webctrl ui5-tooltip='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-tooltip='Settings' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBarChild' aaname='Settings' check:text='Settings' /&gt;" Guid="88be3346-6760-491c-8654-13a469eaf557" InformativeScreenshot="67f9735a0e052d9ff733e4883aacf86f.png" Reference="KWxMGTXoP0u7PO4xdaUHCQ/noC040GtB0WhB_t5QtfQsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://launchpad-qa.orica.net/fiori#Customer-manageLineItems&amp;/?sap-iapp-state=ASLPLKDZYR5DGAURSNF4Z6YOLKXZJUDKQPAUBV6S" ContentHash="A-xjH1WiWkCZZnVygZVxGg" DesignTimeRectangle="1742, 514, 48, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings BTN'" FullSelectorArgument="&lt;webctrl ui5-tooltip='Settings' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-tooltip='Settings' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBarChild' aaname='Settings' check:text='Settings' /&gt;" Guid="88be3346-6760-491c-8654-13a469eaf557" InformativeScreenshot="67f9735a0e052d9ff733e4883aacf86f.png" Reference="tnutLbMXZk6h2u2iXlkr1A/noC040GtB0WhB_t5QtfQsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
                           <uix:NClick ClickType="Single" DelayBefore="8" DisplayName="Click 'ED1 Filter'" sap:VirtualizedContainerService.HintSize="1370,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable ContentHash="RHOOxQc-EkSfj_eSw_ihvA" DesignTimeRectangle="503, 151, 32, 16" DesignTimeScaleFactor="1" FriendlyName="'ED1 Filter'" FullSelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Filter' role='page tab' /&gt;&lt;ctrl role='grouping' text='Filter' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Filter' role='page tab' /&gt;&lt;ctrl role='grouping' text='Filter' automationid='' check:text='Filter' /&gt;" Guid="836b945b-fcfd-4f42-b850-f72168ae57c5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAUCAYAAADlep81AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGoSURBVEhLY/g/yMCogwiBUQcRAigO+vL993//1t3/OUIWoGC9vPX/X7z//n/X+af/5+6++f/3n3//p2y99j9n5nGoTuoBrA7qWHsR7AAYfv3xx/+/f//9b1h+7n9M34H/33/+wXDQgr23/ufPPgHlkQ+wOghkGSGA7iBqhRhJDkK2FJ2NHMWgqAWF6Pw9t/4rpq78zxW28L9NxZb/Vx6+B6sHhbpD1db/Lasu/JdKWI5iH1FpCCQGksPlIBBA5685dv+/cdEGsCN+/v77f9G+2//tKrf+f/buG9hBoHTp27L7/+1nH8FmwwBRaejt5x////3DHUIggMz/8evv/6je/f8nbr4K5oPAh6+//rvWbf+/79IzuIO2nXkMlUUAqkQZCCDzcYU0CIPUgRwEirKL99+B1SMDmjgIWwghA5o5yLt51/8nb7/CoxNUJIDSCMhBoDRkULD+/6GrL/7/AqYhEJ0149j/j8Coo4mDrj56/181YzU4ob77/BNsOIgPylGgdALKZUsO3PmvBhQDRZVWztr/6088AIsT7aDBAEYdRAiMOgg/+P8fAEQYh704/gNZAAAAAElFTkSuQmCC" InformativeScreenshot="b43f81bd771047a8e1eaaa9aba9af659.png" Reference="tnutLbMXZk6h2u2iXlkr1A/5AWTCKY6zkChfJFKAUORtQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome*' title='*Manage Customer Line Items*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" Version="V1" Visibility="Interactive" />
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ED1 Filter By'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="1370,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[in_Filtername1 + &quot;[k(enter)]&quot;]" Version="V3">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Type Into 'ED1 Filter By'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="1370,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="beca65df-69e6-4e5b-b1d8-7fb94a0075c8" Text="[in_Filtername1 + &quot;[k(enter)]&quot;]" Version="V3">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable ContentHash="2JlJT8FzU0iCF2N3tLUYgw" DesignTimeRectangle="373, 190, 153, 24" DesignTimeScaleFactor="1" FriendlyName="'ED1 Filter By'" FullSelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Filter by' role='combo box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Manage Customer Line Items' role='document' /&gt;&lt;ctrl name='Filter by' role='combo box' automationid='' /&gt;" Guid="0a8cfade-9cc7-4768-8670-eceafdf8ced8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJ0AAAAcCAYAAAB7yr2rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOYSURBVHhe7ZsJTxNRFEb90SoKuJS1pVBaoLIGBGQpIBoEDAS0gKjs+2JiDFsEoVC6t4Rwne/aqbW0IQ4yreSe5KWdN2+WpKffvdOkd0gQdIal8/h8VN/iIJOtToaMGx8sHYT7+m0LbwXhxmHpYJ8g6IVIJ+iOSCfojkgn6I5IJ+iOSCfozrWkm/gwSXezsi+NqZlZOjpyUV//IJ16PHR2dka19Y28/ibAtUxmC23v7ERnhExGs3QXFxfU3NpG7Z1dLJY6PF4vnZ+f0+g7J5ktVnK73SyFsaSMtra2+diV1TWqrm2gUCjM29dlaXmFym1VFAgEozNCJqNZOp/PR6ZSCy0sLkVnUrOx+YVKy218DOh++UpJwQF+/y/AuV60d/IXQch8NEuH1Coymun7/n505jdIHIutMiYkpEAqBoNBqqiqjpVhrMHakxM3NTW3Ulb2I7r3ICe6NsTHolTjGMwZ8osuXQ9pWfWshq9Raa/m43MeG2hxaZn3Q3AcGy/k7Nw8lVkryKuksqA/mqVL1s/df5jLqQYxkIJ4Tezn0Heh/0LJBa7jYy7DQ8MjFA6H+ZhiUynNzM7xfkiT+8RAn6emyef3X0oznCevoJgF3t7ZJa+Spq1tHSxqKBTi60JKtZRDNKxd39jkbUF/NEl3VT+nphM+9MR+DvtUCXCerp5eHqpManINj4zGEtM5NsH7koF+Lr/QSIeHR9EZ4oSF9Cjn+BJAYtwfrvFmYJAcXT18n0J60CTdVf0c0gkDxPdz+NDRe6n9HCRFiU5MTJTI1bX1PxIzFcn6OcwhXZGyu3t7fA28ImWtlXZ+uBHShybptPRzkAL78JSJdAKQIL/IlPKnjvjETEZ8Kqr4/QGyVthp8uMn3obYRnMZLa+sUuPzFppfWOR5IX1okg59UioZ4tNJ7edQ0iAI0qag2ERr6xv8UOF2n7K8b4eGKRKJkMt1rCRkL6cjiE/MZKB0G5R+DveCXg3CQXB7TV3sQSSsnBfbdQ1N1NbhkLKaAfy1dEgsfLCpZIhPJ3zAaOpRLpFuBwc/qNBYwtvvneO8HmX0qfJUirKap/RmzrFxiiiyJiZmMnBOPIV2OLr5yRcD9xYIBKIrfoHeE3JDaiH9aEq6/wkkLH6Inpqeic4I6eZWS6eWWyShlNXM4dZKh/KPcvu6r5/LtZA53PryKmQeIp2gOyKdoDssnfwFUdATls7jlT9by9BvsHSCoB9EPwHMzNxnN1X4rAAAAABJRU5ErkJggg==" InformativeScreenshot="505f9d15b2b3aca29178b5eaed2f3df7.png" Reference="tnutLbMXZk6h2u2iXlkr1A/c4dBJdv5okKq4ereU6sCVw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Manage Customer Line Items - Profile 1 - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" Version="V1" Visibility="Interactive" />
                             </uix:NTypeInto.Target>
